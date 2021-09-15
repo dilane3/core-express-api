@@ -6,7 +6,7 @@ class UserController {
    * Get all users
    */
   static getAllUsers(req, res) {
-    res.send("No user founded !")
+    res.send("No user found !")
   }
 }
 

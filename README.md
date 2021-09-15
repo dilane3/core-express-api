@@ -7,13 +7,14 @@ It offer to you the main structure that you can use for starting your server app
 There is so many folders and files in this project, only that you need to start you server application. Let's discover it.
 
 1. **Main file (app.js)**
+
 This file is the entry point of your application, it's here where all the request is handled by your server app.
 
 2. **routes folder**
+
 This Folder store all the routes file of your application. By default there is already one router file named **user.js**, and handles all the request that refers to the user.
 
 code
-
 ```javascript
 
 const express = require('express')
@@ -27,14 +28,15 @@ route.get("/all", authenticationMiddleWare, getAllUsers)
 module.exports = route
 
 ```
-regarding inside of this file, we remark that, there is one route defined which is `/all`
-We can also see that, this file depends on **getAllUsers** function and **authenticationMiddleWare**. We will present all those functions below.
+regarding inside of this file, we remark that, there is one route defined which URI `/all`.
+We can also see that, this file depends on **getAllUsers** function and **authenticationMiddleWare**.
+We will present all those functions below.
 
 3. **controllers folder**
+
 This folder store all controllers that are used for all routes file. One controller is asign to one router handler. It's inside the controller where all the logic is stored.
 
 code
-
 ```javascript
 
 const {hashPassword, comparePassword} = require("../helpers/hashPassword.js")
@@ -45,7 +47,7 @@ class UserController {
    * Get all users
    */
   static getAllUsers(req, res) {
-    res.send("No user founded !")
+    res.send("No user found !")
   }
 }
 
